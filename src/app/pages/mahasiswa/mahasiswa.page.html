@@ -1,0 +1,33 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>All mahasiswa</ion-title>
+    <ion-buttons slot="end" (click)="changeDisplay()">
+      <ion-icon *ngIf="display" name="list-outline"></ion-icon>
+      <ion-icon *ngIf="!display" name="apps"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-mahasiswa-display
+  [listMahasiswa]="listMahasiswa"
+  [listDisplay]="display">
+
+  </app-mahasiswa-display>
+
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-tab-bar>
+      <ion-tab-button (click)="addMahasiswa()">
+        <ion-label>Add Mahasiswa</ion-label>
+        <ion-icon name="add"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-toolbar>
+</ion-footer>

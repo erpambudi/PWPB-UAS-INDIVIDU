@@ -3,14 +3,23 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'mahasiswa',
     pathMatch: 'full'
   },
+  {
+    path: 'mahasiswa',
+    loadChildren: () => import('./pages/mahasiswa/mahasiswa.module').then( m => m.MahasiswaPageModule)
+  },
+  {
+    path: 'add-mahasiswa/:tag',
+    loadChildren: () => import('./pages/add-mahasiswa/add-mahasiswa.module').then( m => m.AddMahasiswaPageModule)
+  },
+  {
+    path: 'tags-modal',
+    loadChildren: () => import('./pages/tags-modal/tags-modal.module').then( m => m.TagsModalPageModule)
+  },
+
 ];
 
 @NgModule({
